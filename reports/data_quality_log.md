@@ -107,3 +107,10 @@ revenue analysis. |
 - payment_installments up to 24 as expected in Brazilian credit market
 - 27 states including DF correct for Brazil
 - Geolocation avg 52.6 rows per zip prefix by design, multiple coordinate readings per area
+
+## Validated metrics 
+
+- Late delivery rate (clean delivered orders): 6.7%
+- Median days to deliver: 10 days
+- Mean days to deliver: 12 days
+- Reliable order base for SLA analysis: 96,193
