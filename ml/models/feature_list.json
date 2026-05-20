@@ -1,0 +1,18 @@
+[
+  "order_day_of_week",
+  "order_hour",
+  "order_month_num",
+  "item_count",
+  "seller_count",
+  "order_value",
+  "freight_value",
+  "freight_ratio_pct",
+  "avg_product_weight_g",
+  "avg_product_volume_cm3",
+  "seller_hist_late_rate",
+  "seller_avg_days_to_deliver",
+  "seller_total_orders",
+  "approval_lag_hours",
+  "customer_state_enc",
+  "primary_category_enc"
+]

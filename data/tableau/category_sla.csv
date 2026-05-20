@@ -1,0 +1,63 @@
+product_category_name,total_orders,late_orders,late_rate_pct,avg_days_to_deliver,median_days_to_deliver,p90_days_to_deliver,avg_days_vs_estimate,median_days_vs_estimate,sla_tier
+moveis_colchao_e_estofado,37,5,13.51,13.9,9.0,28.6,-7.2,-10.0,Critical
+artigos_de_natal,124,15,12.1,15.3,13.0,30.2,-12.1,-13.0,Critical
+audio,348,42,12.07,12.9,10.0,26.0,-10.1,-11.0,Critical
+moveis_escritorio,1251,131,10.47,20.2,19.0,33.6,-12.0,-13.0,Critical
+fashion_underwear_e_moda_praia,117,12,10.26,13.3,10.0,27.0,-10.9,-12.0,Critical
+casa_conforto,390,39,10.0,12.7,11.0,22.0,-10.2,-11.0,Critical
+construcao_ferramentas_iluminacao,242,22,9.09,9.2,8.0,18.0,-11.2,-12.0,Below Average
+moveis_decoracao,6288,565,8.99,12.3,10.0,22.0,-12.5,-12.0,Below Average
+moveis_sala,413,35,8.47,13.3,11.0,23.0,-11.8,-11.5,Below Average
+fashion_roupa_feminina,36,3,8.33,11.5,10.0,25.0,-11.3,-11.0,Below Average
+cama_mesa_banho,9242,765,8.28,12.3,10.0,23.0,-11.7,-12.0,Below Average
+beleza_saude,8620,712,8.26,11.5,9.0,23.0,-12.0,-13.0,Below Average
+eletronicos,2516,207,8.23,12.4,10.5,23.0,-11.1,-12.0,Below Average
+livros_tecnicos,256,21,8.2,10.2,8.0,21.0,-11.3,-12.0,Below Average
+bebes,2800,228,8.14,12.0,10.0,23.0,-11.7,-12.0,Below Average
+ferramentas_jardim,3436,278,8.09,13.2,11.0,23.0,-12.0,-13.0,Below Average
+construcao_ferramentas_construcao,736,58,7.88,10.3,8.0,19.0,-11.6,-12.0,Below Average
+moveis_quarto,90,7,7.78,12.8,11.0,23.8,-13.5,-13.0,Below Average
+alimentos,440,34,7.73,8.8,6.5,18.0,-10.1,-10.0,Below Average
+relogios_presentes,5478,418,7.63,12.2,10.0,23.0,-12.0,-13.0,Below Average
+instrumentos_musicais,605,46,7.6,12.1,10.0,24.0,-11.8,-13.0,Below Average
+informatica_acessorios,6513,494,7.58,12.8,11.0,23.0,-12.4,-13.0,Below Average
+automotivo,3804,288,7.57,11.7,9.0,22.0,-11.5,-12.0,Below Average
+telefonia,4083,306,7.49,12.3,10.0,23.0,-11.4,-12.0,Below Average
+industria_comercio_e_negocios,231,17,7.36,10.3,8.0,20.0,-12.5,-13.0,Below Average
+papelaria,2262,166,7.34,12.3,10.0,23.0,-12.0,-13.0,Below Average
+casa_construcao,483,35,7.25,12.8,11.0,22.0,-11.6,-12.0,Below Average
+dvds_blu_ray,56,4,7.14,12.5,11.0,22.0,-13.4,-14.0,Below Average
+esporte_lazer,7509,528,7.03,11.7,10.0,22.0,-12.0,-13.0,Below Average
+perfumaria,3074,214,6.96,11.2,9.0,22.0,-12.5,-13.0,Below Average
+construcao_ferramentas_jardim,190,13,6.84,11.4,10.0,21.9,-13.5,-13.0,Below Average
+brinquedos,3789,255,6.73,11.2,9.0,21.0,-12.1,-13.0,Below Average
+livros_interesse_geral,495,33,6.67,11.2,9.0,22.0,-12.2,-13.0,Average
+fashion_roupa_masculina,106,7,6.6,12.5,10.0,22.0,-12.7,-14.0,Average
+tablets_impressao_imagem,78,5,6.41,12.5,11.0,22.8,-12.9,-14.0,Average
+cine_foto,63,4,6.35,10.1,8.5,21.3,-11.3,-11.5,Average
+construcao_ferramentas_ferramentas,97,6,6.19,11.6,10.0,20.0,-12.2,-13.0,Average
+artes,195,12,6.15,10.9,9.0,20.0,-12.8,-12.0,Average
+consoles_games,1008,61,6.05,12.9,10.0,24.0,-11.9,-12.0,Average
+cool_stuff,3544,214,6.04,11.8,10.0,21.0,-12.6,-13.0,Average
+utilidades_domesticas,5730,339,5.92,10.5,8.0,20.0,-12.3,-13.0,Average
+sinalizacao_e_seguranca,137,8,5.84,10.0,8.0,17.5,-12.7,-11.5,Average
+eletrodomesticos_2,226,13,5.75,12.7,11.0,22.1,-13.2,-13.0,Average
+fashion_bolsas_e_acessorios,1812,104,5.74,10.6,8.0,20.0,-13.4,-13.0,Average
+pcs,175,10,5.71,13.0,10.0,21.5,-11.6,-13.0,Average
+pet_shop,1684,95,5.64,10.8,9.0,19.0,-12.5,-13.0,Average
+bebidas,285,16,5.61,10.0,8.0,19.0,-11.6,-12.0,Average
+portateis_casa_forno_e_cafe,72,4,5.56,9.4,7.0,19.6,-11.6,-12.0,Average
+musica,38,2,5.26,11.2,9.0,17.3,-14.3,-14.0,Average
+alimentos_bebidas,220,11,5.0,10.5,8.0,19.3,-11.6,-12.0,Average
+moveis_cozinha_area_de_servico_jantar_e_jardim,241,12,4.98,11.5,9.0,22.7,-12.4,-11.5,Average
+eletroportateis,608,30,4.93,10.3,8.0,19.0,-13.9,-14.0,Average
+telefonia_fixa,212,10,4.72,12.2,11.0,21.0,-14.7,-14.0,Average
+fashion_calcados,235,11,4.68,14.9,13.0,24.4,-14.8,-14.0,Average
+eletrodomesticos,746,34,4.56,10.9,9.0,20.0,-12.7,-12.0,Average
+climatizacao,245,11,4.49,11.8,9.0,23.0,-14.2,-14.0,Average
+malas_acessorios,1015,45,4.43,10.2,8.0,18.0,-12.6,-13.0,Average
+market_place,273,11,4.03,11.6,10.0,21.7,-14.7,-13.0,Average
+livros_importados,50,2,4.0,7.7,6.0,13.0,-11.2,-11.0,Average
+agro_industria_e_comercio,177,7,3.95,11.2,9.0,19.0,-11.5,-10.0,Average
+construcao_ferramentas_seguranca,159,5,3.14,11.4,9.0,22.8,-12.4,-12.0,Average
+artigos_de_festas,38,0,0.0,8.9,7.5,18.0,-15.1,-14.0,Good
