@@ -149,11 +149,41 @@ File: excel/olist_analysis.xlsx
 
 ## ML Model: Delivery Delay Prediction
 
-I built a Random Forest classifier to predict whether an order would be delivered late, framed as a binary classification problem. The business justification is straightforward: if you can flag an order as likely-late before it ships, you can prioritise it in the logistics queue or proactively notify the customer before they complain.
+I built a Random Forest classifier to predict whether an order would be delivered late, framed as a binary classification problem. The business justification is straightforward: if you can flag an order as likely-late before it ships, you can prioritise it in the logistics queue or proactively notify the customer before they complain. Late deliveries are the single largest driver of low review scores on the platform. A seller with a 12.26 percent historical late rate earns an average review score of 3.35, well below the platform median.
 
-I chose Random Forest over Logistic Regression because delivery delay is driven by non-linear interactions between product category, seller location, customer location, and freight value. A linear model would underfit those interactions. I did not use XGBoost because the marginal AUC gain over Random Forest was not worth the loss of interpretability for a first-pass operational model.
+I chose Random Forest over Logistic Regression because delivery delay is driven by non-linear interactions between seller history, product category, customer location, and seasonality. A linear model cannot capture the compounding effect of a high-risk seller shipping during the November Black Friday peak. Random Forest handles those interactions without manual feature engineering. I did not use XGBoost because Random Forest at AUC 0.8031 with transparent feature importance is more defensible in a business setting than a marginally better gradient boosted ensemble.
 
-Full model documentation including features used, evaluation metrics, confusion matrix, feature importance chart, and business interpretation is in ml/model_card.md.
+### Model Comparison
+
+| Model | AUC-ROC | Late Recall | Late Precision | Late F1 |
+|-------|---------|-------------|----------------|---------|
+| Logistic Regression (baseline) | 0.7223 | n/a | n/a | n/a |
+| Random Forest (final) | 0.8031 | 0.5799 | 0.2200 | 0.3190 |
+
+The AUC improvement of 8.1 percentage points on identical features confirms non-linear interactions exist in the data.
+
+### Classification Report (Test Set, 19,236 rows, Threshold 0.50)
+
+| Class | Precision | Recall | F1 | Support |
+|-------|-----------|--------|----|---------|
+| On-time | 0.9656 | 0.8516 | 0.9050 | 17,941 |
+| Late | 0.2200 | 0.5799 | 0.3190 | 1,295 |
+
+At threshold 0.50 the model catches 57.99 percent of actual late orders before delivery. Late precision of 22 percent means roughly 78 of every 100 flagged orders will arrive on time. This is an acceptable tradeoff because the cost of a false positive (an unnecessary seller alert) is much lower than the cost of a false negative (a customer receiving a late order with no warning and leaving a low review score).
+
+### Top 5 Features by Importance
+
+| Rank | Feature | Importance | Business Meaning |
+|------|---------|------------|-----------------|
+| 1 | seller_hist_late_rate | 0.300 | Who the seller is matters more than what is being shipped |
+| 2 | order_month_num | 0.162 | November Black Friday creates systemic platform-wide delays |
+| 3 | customer_state_enc | 0.077 | Remote northern states face structurally longer transit times |
+| 4 | seller_avg_days_to_deliver | 0.072 | Seller's actual historical delivery pace, not the platform promise |
+| 5 | freight_value | 0.066 | Higher freight signals more distant or complex delivery route |
+
+seller_hist_late_rate at 0.300 is nearly double the next feature. Who the seller is matters more than what is being shipped or where it is going. The top two features together account for 46.2 percent of total model importance.
+
+Full documentation including all 16 features, hyperparameters, class imbalance handling, threshold rationale, known limitations, and inference code is in ml/model_card.md.
 
 ---
 
@@ -165,7 +195,11 @@ I segmented 93,358 unique customers into 8 groups. Champions at 23,413 customers
 
 ### Cohort Retention
 
-Month 1 retention drops to 0.3 to 0.4 percent almost immediately across all cohorts. This is not a data error. It reflects the nature of Brazilian e-commerce in 2016 to 2018, where the platform was still building repeat purchase behaviour. The December 2017 cohort showed slightly better retention, likely driven by holiday gifting.
+Month 1 retention drops to 0.3 to 0.4 percent almost immediately across all cohorts. This is not a data error. It reflects the nature of Brazilian e-commerce in 2016 to 2018, where the platform was still building repeat purchase behaviour. The December 2017 cohort showed slightly better retention, likely driven by holiday gifting creating natural repeat purchase occasions.
+
+The more pointed observation is that Olist was acquiring customers faster than it could retain them. The Lost segment at 11,741 sitting nearly equal to Loyal Customers at 11,652 confirms this. Growth during this period was driven almost entirely by new customer acquisition rather than repeat purchases from existing ones.
+
+What Olist should do about this: the retention intervention needs to happen in the first 30 days after a customer's first order, which is exactly where the cohort data shows the sharpest drop. A post-delivery email sequence offering a discount on a second purchase, triggered specifically for Champions and Potential Loyalists identified through RFM scoring, would be the highest-leverage starting point. Targeting the full customer base with retention campaigns would be wasteful. The RFM segmentation in this project exists precisely to make that targeting possible.
 
 ### Delivery SLA
 
