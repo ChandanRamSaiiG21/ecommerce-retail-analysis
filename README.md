@@ -1,4 +1,4 @@
-# Olist Brazilian E-Commerce Analytics
+# E-Commerce Marketplace Analytics
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-blue) ![Tableau](https://img.shields.io/badge/Tableau-Public-orange) ![Looker](https://img.shields.io/badge/Looker-Studio-blue) ![Excel](https://img.shields.io/badge/Excel-Deliverable-green) ![ML](https://img.shields.io/badge/ML-scikit--learn-orange) ![Status](https://img.shields.io/badge/Status-Complete-green)
 
